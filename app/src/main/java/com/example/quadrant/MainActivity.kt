@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.quadrant.ui.theme.QuadrantTheme
 
@@ -33,54 +34,56 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                        ComposeQuadrantApp()
+                    ComposeQuandrantApp()
                 }
             }
         }
     }
 }
+
 @Composable
-fun ComposeQuadrantApp() {
-    Column(Modifier.fillMaxWidth()) {
-        Row(Modifier.weight(1f)) {
-            ComposableInfoCard(
-                title = stringResource(R.string.first_title),
-                description = stringResource(R.string.first_description),
+fun ComposeQuandrantApp() {
+    Column (Modifier.fillMaxWidth()){
+        Row (Modifier.weight(1f)){
+            ComposableIntoCard(
+                title =  stringResource(id = R.string.first_title),
+                description =  stringResource(id = R.string.first_description),
                 backgroundColor = Color(0xFFEADDFF),
                 modifier = Modifier.weight(1f)
             )
-            ComposableInfoCard(
-                title = stringResource(R.string.second_title),
-                description = stringResource(R.string.second_description),
+            ComposableIntoCard(
+                title =  stringResource(id = R.string.second_title),
+                description =  stringResource(id = R.string.second_description),
                 backgroundColor = Color(0xFFD0BCFF),
                 modifier = Modifier.weight(1f)
+
             )
         }
-        Row(Modifier.weight(1f)) {
-            ComposableInfoCard(
-                title = stringResource(R.string.third_title),
-                description = stringResource(R.string.third_description),
-                backgroundColor = Color(0xFFB69DF8),
+        Row (Modifier.weight(1f)){
+            ComposableIntoCard(
+                title =  stringResource(id = R.string.third_title),
+                description =  stringResource(id = R.string.third_description),
+                backgroundColor = Color(0xFFD0BCFF),
                 modifier = Modifier.weight(1f)
+
             )
-            ComposableInfoCard(
-                title = stringResource(R.string.fourth_title),
-                description = stringResource(R.string.fourth_description),
-                backgroundColor = Color(0xFFF6EDFF),
+            ComposableIntoCard(
+                title =  stringResource(id = R.string.fourth_title),
+                description =  stringResource(id = R.string.fourth_description),
+                backgroundColor = Color(0xFFEADDFF),
                 modifier = Modifier.weight(1f)
             )
         }
     }
 }
-
 @Composable
-private fun ComposableInfoCard(
+private fun ComposableIntoCard(
     title: String,
     description: String,
     backgroundColor: Color,
     modifier: Modifier = Modifier
 ) {
-    Column(
+    Column (
         modifier = modifier
             .fillMaxSize()
             .background(backgroundColor)
@@ -98,4 +101,10 @@ private fun ComposableInfoCard(
             textAlign = TextAlign.Justify
         )
     }
+}
+
+@Preview
+@Composable
+fun PreviewQ() {
+    ComposeQuandrantApp()
 }
